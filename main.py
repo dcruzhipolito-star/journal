@@ -3,11 +3,11 @@ from journal import *
 
 # Hola, voy a hacer cositas :)
 rutaDiario = "diario.txt"
-en_este_instante = datetime.today()
+este_instante = datetime.today()
 
 with open(rutaDiario, "a", encoding="utf-8") as newVer: 	# se abre el archivo en modo "append"
-    if lockFile(rutaDiario, en_este_instante) == True:					# si el diario está marcado para no escribir nuevas entradas
-        blockNotif(en_este_instante)
+    if lockFile(rutaDiario, este_instante) == True:					# si el diario está marcado para no escribir nuevas entradas
+        blockNotif(este_instante)
     else:													# si está permitido escribir nuevas entradas
         newEntry(newVer, ahora)
                 
